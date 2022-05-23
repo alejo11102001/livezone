@@ -1,0 +1,71 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: rgb(247, 235, 213);
+}
+
+.contenedor_2{
+    background-color: rgb(179, 179, 179);
+    width: 480px;
+    height: 910px;
+    position: relative;
+    top: 50%;
+    left: 28%;
+    padding: 20px 30px;
+}
+
+.contenedor_2 h1{
+    text-align: center;
+    font-size: 30px;
+    color: blue;
+}
+
+.contenedor_2 h2{
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}
+
+.contenedor_2 h3{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.empresa{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.form_text{
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    border-bottom:  2px solid red;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.p1{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.contenedor_2 .form_label{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.btn_submit{
+    top: 92%;
+    left: 37%;
+    color: rgb(0, 0, 0);
+    background-color: #81d89b;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 15px 10px;
+    font-size: 25px;
+}

@@ -1,0 +1,34 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(247, 235, 213);
+}
+
+.form_title{
+    color: blue;
+}
+
+.contenedor{
+    background-color: rgb(179, 179, 179);
+    width: 480px;
+    height: 650px;
+    position: relative;
+    top: 50%;
+    left: 28%;
+    padding: 20px 30px;
+}
+
+.form_return{
+    top: 92%;
+    left: 45%;
+    color: rgb(0, 0, 0);
+    background-color: #81d89b;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 15px 10px;
+    font-size: 25px;
+}
+

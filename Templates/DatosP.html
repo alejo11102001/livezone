@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Static/style1.css">
+    <script src="../java/DatosP.js"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <title>Informacion Personal</title>
+</head>
+<body>
+    <div class="contenedor_personal">
+        <form action="../bd/DatosP.php" method="post">
+            <h1>Información Personal</h1>
+            <br><label class="form_label">Primer Nombre</label>
+            <br><input type="text" name="nombre1" class="form_text" placeholder="Ingrese su primer nombre" minlength="3" required>
+            <br><br><label class="form_label">Segundo Nombre</label>
+            <br><input type="text" name="nombre2" class="form_text" placeholder="Ingrese su segundo nombre" minlength="3" required>
+            <br><br><label class="form_label">Primer Apellido</label>
+            <br><input type="text" name="apellido1" class="form_text" placeholder="Ingrese su primer apellido" minlength="4" required>
+            <br><br><label class="form_label">Segundo Apellido</label>
+            <br><input type="text" name="apellido2" class="form_text" placeholder="Ingrese su segundo apellido" minlength="3" required>
+            <br><br><label class="form_label">Celular</label>
+            <br><input type="number" name="celular" class="form_text" placeholder="Ingrese su celular" minlength="10" required>
+            <br><br><label class="form_label">Correo</label>
+            <br><input type="email" name="correo" class="form_text" placeholder="Ingrese su correo electronico" minlength="8" required>
+            <br><br><label class="form_label">Cedula</label>
+            <br><input type="number" name="cedula" class="form_text" placeholder="Ingrese su cedula" minlength="6" required>
+            <br><br><label class="form_label">Dirección</label>
+            <br><input type="text" name="direccion" class="form_text" placeholder="Ingrese su dirección" minlength="6" required>
+            <br><br><label class="form_label">Nombre de la unidad o edificación(opcional):</label>
+            <br><input type="text" name="unidad" class="form_text" placeholder="Ingrese el nombre de la unidad" minlength="6">
+            <br><br><label class="form_label">Departamento</label>
+            <br><input type="text" name="departamento" class="form_text" placeholder="Ingrese el departamento" minlength="6" required>
+            <br><br><label class="form_label">Municipio</label>
+            <br><input type="text" name="municipio" class="form_text" placeholder="Ingrese el municipio" minlength="6" required>
+            <br><br><label class="form_label">Barrio</label>
+            <br><input type="text" name="barrio" class="form_text" placeholder="Ingrese el barrio" minlength="6" required><br><br>
+            <div style="left: 20%;" class="ubicacion">
+            <button onclick="mapa(event)"> Permitir la ubicación de dispositivo</button>
+            <div>
+                <h3 class="form_label">Tu posición es: <span id="Pos">Desconocida</span></h3>
+                <h3 class="form_label" id="PosLink"><a target="_blank"></a></h3>
+            </div>
+            <label class="form_label">Autorizo el tratamiento de mis datos personales: <br><br>Si<input type="radio" name="autorizacion" id="autorizacion" onclick="validarAutorizacionSi(this)">
+            No<input type="radio" name="autorizacion" id="autorizacion" onclick="validarAutorizacionNo(this)"></label>
+            <br><br><input type="submit" class="btn_submit" value="Registrar" id="BotonRegistrar">
+        </div>
+        </form>
+    </div>
+</body>
+</html>

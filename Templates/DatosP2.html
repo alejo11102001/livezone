@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Static/style2.css">
+    <script src="../java/DatosP2.js"></script>
+    <title>Información Personal</title>
+</head>
+<body>
+    <div class="contenedor_2">
+        <form action="../bd/DatosP2.php" method="post">
+            <h1>Información personal</h1>
+            <h3>Bienvenido a la encuesta, responde todas las preguntas para continuar.</h3>
+            <br><h2>Nivel de formación</h2>
+            <br><input type="radio" name="formacion" value="primaria" id="primaria"><label class="p1"> Primaria</label>
+            <br><input type="radio" name="formacion" value="bachillerato" id="bachillerato"><label class="p1"> Bachillerato</label>
+            <br><input type="radio" name="formacion" value="tecnico" id="tecnico"><label class="p1"> Técnico</label>
+            <br><input type="radio" name="formacion" value="tecnologo" id="tecnologo"><label class="p1"> Tecnólogo</label>
+            <br><input type="radio" name="formacion" value="universitario" id="universitario"><label class="p1"> Universitario</label>
+            <br><input type="radio" name="formacion" value="ninguna" id="ninguna"><label class="p1"> Ninguna</label>
+            <h2>Año de construcción</h2>
+            <br><input type="radio" name="construcción" value="antes de 1963" onchange="p1(this)"><label class="p1"> Antes de 1963</label>
+            <br><input type="radio" name="construcción" value="entre 1963 y 1985" onchange="p2(this)"><label class="p1"> Entre 1963 y 1985</label>
+            <br><input type="radio" name="construcción" value="entre 1985 y 1997" onchange="p3(this)"><label class="p1"> Entre 1985 y 1997</label>
+            <br><input type="radio" name="construcción" value="entre 1998 y 2010" onchange="p4(this)"><label class="p1"> Entre 1998 y 2010</label>
+            <br><input type="radio" name="construcción" value="a partir del 2011" onchange="p5(this)"><label class="p1"> A partir del 2011</label>
+            <h2>Constructora</h2>
+            <div class="empresa">
+            <label class="form_label">¿Fue construida por alguna entidad o empresa constructora?</label><br>
+            <br><input type="radio" name="empresa[]" value="Si" onclick="mostrar(this)">Si<input type="radio" name="empresa[]" value="No" onclick="ocultar(this)">No
+            <div class="constructora" id="constructora" style="display:none"><h2>Nombre de la constructora (opcional)</h2>
+                <input type="text" name="empresa[]" class="form_text" placeholder="Ingrese el nombre de la constructora">
+            </div>
+            <script src="../java/DatosP2.js"></script>
+            <br><input type="text" name="resultadodatosp" id="result" style="display: none;" >
+            <br><br><input type="submit" class="btn_submit" value="Siguiente" id="BotonRegistrar" onclick="resultadoDatosP2()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

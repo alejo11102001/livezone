@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="../Static/style3.css">
+    <script src="../java/Exterior.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Exterior</title>
+</head>
+<body>
+    <div class="exterior">
+        <form action="../bd/Exterior.php" method="post">
+            <h1>Al exterior de la vivienda</h1>
+            <br><h2>Área de la vivienda(Frente x fondo):</h2>
+            <br><input type="radio" name="area" value="20 a 30 m^2"><label class="vivie"> 20 a 30 m^2</label>
+            <br><input type="radio" name="area" value="31 a 40 m^2"><label class="vivie"> 31 a 40 m^2</label>
+            <br><input type="radio" name="area" value="41 a 60 m^2"><label class="vivie"> 41 a 60 m^2</label>
+            <br><input type="radio" name="area" value="61 a 70 m^2"><label class="vivie"> 61 a 70 m^2</label>
+            <br><input type="radio" name="area" value="71 a 80 m^2"><label class="vivie"> 71 a 80 m^2</label>
+            <br><input type="radio" name="area" value="81 a 90 m^2"><label class="vivie"> 81 a 90 m^2</label>
+            <br><input type="radio" name="area" value="91 m^2 o mayor"><label class="vivie"> 91 m^2 o mayor</label>
+            <br><h2>Imagen del frente de la vivienda</h2>
+            <div class="form_label">
+            <label>Subir imagen donde se pueda ver su vivienda y las viviendas aledañas</label><br>
+            <br><input type="file" name="adjunto" value="A" accept=".pdf,.jpg,.png" multiple />
+            </div>
+            <br><h2>Ubicación de la vivienda:</h2>
+            <br><input type="radio" name="ubicacion1" value="Ladera" onclick="ubicacion1(this)"><label class="vivie">Ladera</label>
+            <button type="button" id="btn-abrir-popup25" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir22()">Imagen Ladera</button>
+                <div class="overlay" id="overlay25">
+                    <div class="popup" id="popup25">
+                        <a href="#" id="btn-cerrar-popup25" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                        <img src="../Static/Images/jpeg.jpg" width="100%" height="100%">
+                    </div>
+                </div>
+                <script src="../java/Exterior.js"></script>
+            <br><input type="radio" name="ubicacion1" value="Valle" onclick="ubicacion2(this)"><label class="vivie">Valle</label>
+            <button type="button" id="btn-abrir-popup26" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir23()">Imagen Valle</button>
+                <div class="overlay" id="overlay26">
+                    <div class="popup" id="popup26">
+                        <a href="#" id="btn-cerrar-popup26" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                        <img src="../Static/Images/jpeg2.jpg" width="100%" height="100%">
+                    </div>
+                </div>
+                <script src="../java/Exterior.js"></script>
+            <br><h2>Elementos cercanos a la vivienda:</h2>
+            <br><input type="radio" name="elemento" value="Quebrada" onclick="PA(this)"><label class="vivie">Quebrada</label>
+            <br><input type="radio" name="elemento" value="Valle" onclick="PB(this)"><label class="vivie">Valle</label>
+            <button type="button" id="btn-abrir-popup27" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir24()">Imagen Valle</button>
+            <div class="overlay" id="overlay27">
+                <div class="popup" id="popup27">
+                    <a href="#" id="btn-cerrar-popup27" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <img src="../Static/Images/jpeg2.jpg" width="100%" height="100%">
+                </div>
+            </div>
+            <script src="../java/Exterior.js"></script>
+            <br><input type="radio" name="elemento" value="Montaña" onclick="PC(this)"><label class="vivie">Montaña</label>
+            <br><h2>¿El uso actual predominante de la vivienda es:?</h2>
+            <br><input type="radio" name="uso[]" value="Residencial" onchange="USOA(this)"><label class="vivie">Residencial</label>
+            <br><input type="radio" name="uso[]" value="Comercial" onchange="USOB(this)"><label class="vivie">Comercial</label>
+            <br><input type="radio" name="uso[]" value="Educacional" onchange="USOC(this)"><label class="vivie">Educacional</label>
+            <br><input type="radio" name="uso[]" value="Oficinas" onchange="USOD(this)"><label class="vivie">Oficinas</label>
+            <br><input type="radio" name="uso[]" value="Bodegas" onchange="USOE(this)"><label class="vivie">Bodegas</label>
+            <br><input type="radio" name="uso[]" value="Instalación deportiva" onchange="USOF(this)"><label class="vivie">Instalación deportiva</label>
+            <br><input type="radio" name="uso[]" value="Centro de salud" onchange="USOG(this)"><label class="vivie">Centro de salud</label>
+            <br><input type="radio" name="uso[]" value="Industrial" onchange="USOH(this)"><label class="vivie">Industrial</label>
+            <br><input type="radio" name="uso[]" value="Hotelero" onchange="USOI(this)"><label class="vivie">Hotelero</label>
+            <br><input type="radio" name="uso[]" value="Otro" onchange="USOJ(this)"><label class="vivie">Otro</label>
+            <input type="text" name="uso[]" class="form_text" id="elemento" style="display:none;" placeholder="Ingrese un uso diferente">
+            <h2>¿La vivienda anteriormente tuvo un uso diferente al actual:?</h2>
+            <div class="viviend">
+            <input type="radio" name="uso1" value="Si" onclick="mostrar(this)">Si<input type="radio" name="uso1" value="Si" onclick="ocultar(this)">No
+            </div>
+            <div class="uso" id="uso" style="display:none">
+                <br><h2>¿El uso de la vivienda anteriormente era:?</h2>
+                <input type="radio" name="uso2[]" value="Residencial" onchange="anteriorA(this)"><label class="vivie">Residencial</label>
+                <br><input type="radio" name="uso2[]" value="Comercial" onchange="anteriorB(this)"><label class="vivie">Comercial</label>
+                <br><input type="radio" name="uso2[]" value="Educacional" onchange="anteriorC(this)"><label class="vivie">Educacional</label>
+                <br><input type="radio" name="uso2[]" value="Oficinas" onchange="anteriorD(this)"><label class="vivie">Oficinas</label>
+                <br><input type="radio" name="uso2[]" value="Bodegas" onchange="anteriorE(this)"><label class="vivie">Bodegas</label>
+                <br><input type="radio" name="uso2[]" value="Instalación deportiva" onchange="anteriorF(this)"><label class="vivie">Instalación deportiva</label>
+                <br><input type="radio" name="uso2[]" value="Centro de salud" onchange="anteriorG(this)"><label class="vivie">Centro de salud</label>
+                <br><input type="radio" name="uso2[]" value="Industrial" onchange="anteriorH(this)"><label class="vivie">Industrial</label>
+                <br><input type="radio" name="uso2[]" value="Hotelero" onchange="anteriorI(this)"><label class="vivie">Hotelero</label>
+                <br><input type="radio" name="uso2[]" value="Otro" onchange="anteriorJ(this)"><label class="vivie">Otro</label>
+                <input type="text" id="anterior" name="uso2[]" class="form_text" style="display:none;" placeholder="Ingrese un uso diferente">
+            </div>
+            <br><h2>¿El uso de la vivienda del primer piso es:?</h2>
+            <input type="radio" name="usoP" value="Residencial" onchange="primerpisoA(this)"><label class="vivie">Residencial</label>
+            <br><input type="radio" name="usoP" value="Comercial" onchange="primerpisoB(this)"><label class="vivie">Comercial</label>
+            <br><input type="radio" name="usoP" value="Educacional" onchange="primerpisoC(this)"><label class="vivie">Educacional</label>
+            <br><input type="radio" name="usoP" value="Oficinas" onchange="primerpisoD(this)"><label class="vivie">Oficinas</label>
+            <br><input type="radio" name="usoP" value="Bodegas" onchange="primerpisoE(this)"><label class="vivie">Bodegas</label>
+            <br><input type="radio" name="usoP" value="Instalación deportiva" onchange="primerpisoF(this)"><label class="vivie">Instalación deportiva</label>
+            <br><input type="radio" name="usoP" value="Centro de salud" onchange="primerpisoG(this)"><label class="vivie">Centro de salud</label>
+            <br><input type="radio" name="usoP" value="Industrial" onchange="primerpisoH(this)"><label class="vivie">Industrial</label>
+            <br><input type="radio" name="usoP" value="Hotelero" onchange="primerpisoI(this)"><label class="vivie">Hotelero</label>
+            <br><input type="radio" name="usoP" value="No aplica" onchange="primerpisoJ(this)"><label class="vivie">No aplica</label>
+            <br><h2>El total de pisos de la vivienda(si el edificio, casa o apartamento es de # pisos):</h2>
+            <input type="radio" name="piso" value="1" onchange="totalp1(this)"><label class="vivie">1</label>
+            <br><input type="radio" name="piso" value="2" onchange="totalp2(this)"><label class="vivie">2</label>
+            <br><input type="radio" name="piso" value="3" onchange="totalp3(this)"><label class="vivie">3</label>
+            <br><input type="radio" name="piso" value="4" onchange="totalp4(this)"><label class="vivie">4</label>
+            <br><input type="radio" name="piso" value="5" onchange="totalp5(this)"><label class="vivie">5</label>
+            <br><input type="radio" name="piso" value="6" onchange="totalp6(this)"><label class="vivie">6</label>
+            <br><input type="radio" name="piso" value="7 o mayores" onchange="totalp7(this)"><label class="vivie">7 o mayores</label>
+            <br><h2>¿La vivienda se encuentra ubicada en el piso:?</h2>
+            <input type="radio" name="ubicacion" value="1" onchange="totalu1(this)"><label class="vivie">1</label>
+            <br><input type="radio" name="ubicacion" value="2" onchange="totalu2(this)"><label class="vivie">2</label>
+            <br><input type="radio" name="ubicacion" value="3" onchange="totalu3(this)"><label class="vivie">3</label>
+            <br><input type="radio" name="ubicacion" value="4" onchange="totalu4(this)"><label class="vivie">4</label>
+            <br><input type="radio" name="ubicacion" value="5" onchange="totalu5(this)"><label class="vivie">5</label>
+            <br><input type="radio" name="ubicacion" value="6" onchange="totalu6(this)"><label class="vivie">6</label>
+            <br><input type="radio" name="ubicacion" value="7 o mayores" onchange="totalu7(this)"><label class="vivie">7 o mayores</label>
+            <br><h2>Sótanos(incluye parqueaderos subterráneos):</h2>
+            <input type="radio" name="sotano" value="Ninguno" onchange="par1(this)"><label class="vivie">Ninguno</label>
+            <br><input type="radio" name="sotano" value="1" onchange="par2(this)"><label class="vivie">1</label>
+            <br><input type="radio" name="sotano" value="2" onchange="par3(this)"><label class="vivie">2</label>
+            <br><input type="radio" name="sotano" value="3" onchange="par4(this)"><label class="vivie">3</label>
+            <br><input type="radio" name="sotano" value="4" onchange="par5(this)"><label class="vivie">4</label>
+            <br><input type="radio" name="sotano" value="Mayores de 5" onchange="par6(this)"><label class="vivie">Mayores de 5</label>
+            <h2>¿Comparte muro con los vecinos de al lado?</h2>
+            <div class="viviend">
+            <input type="radio" name="muro" value="Si" onclick="muro1(this)">Si<input type="radio" name="muro" value="No" onclick="muro2(this)">No
+            </div>
+            <br><h2>¿Hay presencia de equipos(grandes)dentro de la edificación:?</h2>
+            <br><h3>Por favor seleccionar solo dos respuestas.</h3>
+            <input type="checkbox" name="equipo[]" value="Piscinas" onclick="checkbox()" onchange="equipo1(this)"><label class="vivie">Piscinas</label>
+            <br><input type="checkbox" name="equipo[]" value="Canchas" onclick="checkbox()" onchange="equipo2(this)"><label class="vivie">Canchas</label>
+            <br><input type="checkbox" name="equipo[]" value="Máquinas de gimnasio" onclick="checkbox()" onchange="equipo3(this)"><label class="vivie">Máquinas de gimnasio</label>
+            <br><input type="checkbox" name="equipo[]" value="Tanques de agua" onclick="checkbox()" onchange="equipo4(this)"><label class="vivie">Tanques de agua</label>
+            <br><input type="checkbox" name="equipo[]" value="Maquinaria industrial" onclick="checkbox()" onchange="equipo5(this)"><label class="vivie">Maquinaria industrial</label>
+            <br><input type="checkbox" name="equipo[]" value="Almacenamientos" onclick="checkbox()" onchange="equipo6(this)"><label class="vivie">Almacenamientos</label>
+            <br><input type="checkbox" name="equipo[]" value="Ninguna de los anteriores" onclick="checkbox()" onchange="equipo7(this)"><label class="vivie">Ninguna de los anteriores</label>
+            <br><input type="checkbox" name="equipo[]" value="Otro" onclick="checkbox()" onchange="equipo8(this)"><label class="vivie">Otro</label>
+            <input type="text" id="equipo" name="equipo[]" class="form_text" style="display:none;" placeholder="Ingrese un equipo diferente">
+            <input type="text" name="resultadoexterior2" id="result" style="display:none ;" >
+            <div class="siguiente">
+            <br><input type="submit" class="btn_submit" value="Siguiente" id="BotonRegistrar" onclick="resultadoexterior()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: rgb(247, 235, 213);
+}
+
+.imagenuno{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    left: 32%;
+}
+
+.login{
+    background-color: rgb(179, 179, 179);
+    width: 545px;
+    height: 500px;
+    position: relative;
+    top: 50%;
+    left: 28%;
+    padding: 20px 30px;
+}
+
+.form_label{
+    font-size: 2rem;
+    color: blue;
+    position: absolute;
+    top: 0%;
+    left: 39%;
+
+}
+
+.form_label2{
+    color: blue;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    font-size: 2rem;
+
+}
+
+.login .Administrador{
+    position: absolute;
+    top: 60%;
+    left: 34%;
+    color: rgb(0, 0, 0);
+    background-color: #81d89b;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 20px 10px;
+    font-size: 25px;
+}
+
+.login .Encuesta{
+    position: absolute;
+    top: 75%;
+    left: 39%;
+    color: rgb(0, 0, 0);
+    background-color: #81d89b;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 20px 10px;
+    font-size: 25px;
+}

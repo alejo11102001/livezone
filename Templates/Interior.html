@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="../Static/style4.css">
+    <title>Interior</title>
+</head>
+<body>
+    <div class="interior">
+        <form action="../bd/Interior.php" method="post">
+            <h1>Interior de la vivienda</h1>
+            <br><h2>Altura entre pisos(el piso de la vivienda al techo):</h2>
+            <input type="radio" name="altura" value="2 metros" onchange="altura1(this)"><label class="dise"> 2 metros</label>
+            <br><input type="radio" name="altura" value="2.1 a 2.5 metros" onchange="altura2(this)"><label class="dise"> 2.1 a 2.5 metros</label>
+            <br><input type="radio" name="altura" value="2.6 a 3 metros" onchange="altura3(this)"><label class="dise"> 2.6 a 3 metros</label>
+            <br><input type="radio" name="altura" value="3.1 metros o mayores" onchange="altura4(this)"><label class="dise"> 3.1 metros o mayores</label>
+            <br><h2>Material de contrucción:</h2>
+            <br><input type="radio" name="materialconstruccion[]" value="Mampostería" onchange="Material1(this)"><label class="form_label">
+                <abbr title="Construcción compuesta por ladrillos u otros materiales"><label class="dise">Mampostería</label></abbr></label>
+                <button type="button" id="btn-abrir-popup1" class="btn-abrir-popup"style="vertical-align: auto;;" onclick="abrir1()">Imagen Mamposteria</button>
+                <div class="overlay" id="overlay1">
+                    <div class="popup" id="popup1">
+                        <a href="#" id="btn-cerrar-popup1" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                        <img src="../Static/Images/jpeg3.jpg" width="100%" height="100%">
+                    </div>
+                </div>
+                <script src="../java/interior.js"></script>
+                <br><input type="radio" name="materialconstruccion[]" value="Concreto reforzado" onchange="Material2(this)"><label class="form_label">
+                    <abbr title="Construcción compuesta por concreto y acero"><label class="dise">Concreto reforzado</label></abbr></label>
+                <br><input type="radio" name="materialconstruccion[]" value="Prefabricado" onchange="Material3(this)"><label class="form_label">
+                    <abbr title="Construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la construcción"><label class="dise">Prefabricado</label></abbr></label>
+                    <button type="button" id="btn-abrir-popup2" class="btn-abrir-popup"style="vertical-align: auto;;" onclick="abrir2()">Imagen Prefabricado</button>
+                    <div class="overlay" id="overlay2">
+                        <div class="popup" id="popup2">
+                            <a href="#" id="btn-cerrar-popup2" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                            <img src="../Static/Images/jpeg4.jpg" width="100%" height="100%">
+                        </div>
+                    </div>
+                    <script src="../java/interior.js"></script>       
+            <br><input type="radio" name="materialconstruccion[]" value="Acero" onchange="material4(this)"><label class="dise">Acero</label>
+            <br><input type="radio" name="materialconstruccion[]" value="Madera" onchange="material5(this)"><label class="dise">Madera</label>
+            <br><input type="radio" name="materialconstruccion[]" value="Adobe" onchange="material6(this)"><label class="dise">Adobe</label>
+            <br><input type="radio" name="materialconstruccion[]" value="Tapia" onchange="material7(this)"><label class="dise">Tapia</label>
+            <button type="button" id="btn-abrir-popup3" class="btn-abrir-popup"style="vertical-align: auto;;" onclick="abrir3()">Imagen Tapia</button>
+                    <div class="overlay" id="overlay3">
+                        <div class="popup" id="popup3">
+                            <a href="#" id="btn-cerrar-popup3" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                            <img src="../Static/Images/jpeg5.jpg" width="100%" height="100%">
+                        </div>
+                    </div>
+            <br><input type="radio" name="materialconstruccion[]" value="Guadua" onchange="material8(this)"><label class="dise">Guadua</label>
+            <br><input type="radio" name="materialconstruccion[]" value="Otro" onchange="material9(this)"><label class="dise">Otro</label>
+            <input type="text" id="material" name="materialconstruccion[]" style="display:none;" class="form_text" placeholder="Ingrese un equipo diferente">
+            <div id="listaA" style="display:none">
+                <h2>Tipo de Mampostería:</h2>
+                <br><input type="radio" name="selectA" value="Reforzada" onchange="mamp(this)"><label
+                class="form_label"><abbr title="contiene acero al interior de la estructura"><label class="dise">Reforzada</label></abbr></label>
+            <button type="button" id="btn-abrir-popup4" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir4()">Imagen Reforzada</button>
+            <div class="overlay" id="overlay4">
+                <div class="popup" id="popup4">
+                    <a href="#" id="btn-cerrar-popup4" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <img src="../Static/Images/jpeg6.gif" width="100%" height="100%">
+                </div>
+            </div>
+            <script src="../java/interior.js"></script>
+            <br><input type="radio" name="selectA" value="No Reforzada" onchange="mamp2(this)"><label
+                class="form_label"><abbr title="No contiene hierro al interior de la estructura, solo sería el adobe"><label class="dise">No Reforzada</label></abbr></label>
+                <br><input type="radio" name="selectA" value="Confinada" onchange="mamp3(this)"><label
+                class="form_label"><abbr title="Muro el cual está encerrado alrededor por vigas y columnas"><label class="dise">Confinada</label></abbr></label>
+            <button type="button" id="btn-abrir-popup5" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir5()">Imagen Confinada</button>
+            <div class="overlay" id="overlay5">
+                <div class="popup" id="popup5">
+                    <a href="#" id="btn-cerrar-popup5" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <img src="../Static/Images/jpeg7.jpg" width="100%" height="100%">
+                </div>
+            </div>
+        </div>
+        <div id="listaB" style="display:none">
+            <h2>Concreto reforzado:</h2>
+            <br><input type="radio" name="selectB" value="Muro estructural" onchange="conc(this)"><label
+            class="form_label"><abbr title="muro el cual no se puede quitar ni modificar, ya que son muros que soportan la carga de la vivienda"><label class="dise">Muro estructural</label></abbr></label><br>
+        <input type="radio" name="selectB" value="Pórtico" onchange="conc2(this)"><label clase="form_label"><label class="dise">Pórtico</label></label>
+        <button type="button" id="btn-abrir-popup6" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir6()">Imagen Pórtico</button>
+        <div class="overlay" id="overlay6">
+            <div class="popup" id="popup6">
+                <a href="#" id="btn-cerrar-popup6" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg8.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="selectB" value="Sistema dual o combinado" onchange="conc3(this)"><label
+        class="form_label"><abbr title="muros estructurales y pórticos (compuestos por vigas y columnas)"><label class="dise">Sistema dual o combinado</label></abbr></label>
+            <br><input type="radio" name="selectB" value="Prefabricado" onchange="conc4(this)"><label
+            class="form_label"><abbr title="construcción por secciones o módulos que fueron diseñadas con antelación por fuera de la construcción"><label class="dise">Prefabricado</label></abbr></label>
+        <button type="button" id="btn-abrir-popup7" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir7()">Imagen Prefabricado</button>
+        <div class="overlay" id="overlay7">
+            <div class="popup" id="popup7">
+                <a href="#" id="btn-cerrar-popup7" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg4.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+    </div>
+        <div id="listaC" style="display:none">
+        <h2>Prefabricado:</h2>
+        <input type="radio" name="selectC[]" value="Yeso" onchange="pref(this)"><label class="dise">Yeso</label>
+        <button type="button" id="btn-abrir-popup8" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir8()">Imagen Yeso</button>
+        <div class="overlay" id="overlay8">
+            <div class="popup" id="popup8">
+                <a href="#" id="btn-cerrar-popup8" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg9.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="selectC[]" value="Madera" onchange="pref2(this)"><label class="dise">Madera</label>
+        <button type="button" id="btn-abrir-popup9" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir9()">Imagen Madera</button>
+        <div class="overlay" id="overlay9">
+            <div class="popup" id="popup9">
+                <a href="#" id="btn-cerrar-popup9" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg10.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="selectC[]" value="PVC" onchange="pref3(this)"><label class="dise">PVC</label>
+        <button type="button" id="btn-abrir-popup10" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir10()">Imagen PVC</button>
+        <div class="overlay" id="overlay10">
+            <div class="popup" id="popup10">
+                <a href="#" id="btn-cerrar-popup10" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg11.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="selectC[]" value="Drywall" onchange="pref4(this)"><label class="dise">Drywall</label>
+        <button type="button" id="btn-abrir-popup11" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir11()">Imagen Drywall</button>
+        <div class="overlay" id="overlay11">
+            <div class="popup" id="popup11">
+                <a href="#" id="btn-cerrar-popup11" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg12.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="selectC[]" value="Fibrocemento" onchange="pref5(this)"><label class="dise">Fibrocemento</label>
+        <button type="button" id="btn-abrir-popup12" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir12()">Imagen Fibrocemento</button>
+        <div class="overlay" id="overlay12">
+            <div class="popup" id="popup12">
+                <a href="#" id="btn-cerrar-popup12" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg13.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="selectC[]" value="Otro" onchange="pref6(this)"><label class="dise">Otro</label>
+            <input type="text" id="prefa" name="selectC[]" style="display:none;" class="form_text" placeholder="Ingrese otro prefabricado">
+        </div>
+            <h2>¿Como se encuentra construido el piso de la vivienda:?</h2>
+                <input type="radio" name="construido" value="Losa de concreto aligerado" onchange="mpiso(this)"><label
+                class="form_label"><abbr title="conformada por concreto armado, estas se evidencian ya que forman una especie de cajón en el techo"><label class="dise">Losa de concreto aligerado</label></abbr></label>
+            <button type="button" id="btn-abrir-popup13" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir13()">Imagen Losa</button>
+            <div class="overlay" id="overlay13">
+                <div class="popup" id="popup13">
+                    <a href="#" id="btn-cerrar-popup13" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <img src="../Static/Images/jpeg14.jpg" width="50%" height="50%">
+                </div>
+            </div>
+            <script src="../java/interior.js"></script>
+            <br><input type="radio" name="construido" value="Losa de concreto maciza" onchange="mpiso2(this)"><label
+                class="form_label"><abbr title="conformada por concreto y acero"><label class="dise">Losa de concreto maciza</label></abbr></label>
+            <button type="button" id="btn-abrir-popup14" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir14()">Imagen Losa</button>
+            <div class="overlay" id="overlay14">
+                <div class="popup" id="popup14">
+                    <a href="#" id="btn-cerrar-popup14" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <img src="../Static/Images/jpeg15.jpg" width="100%" height="100%">
+                </div>
+            </div>
+            <script src="../java/interior.js"></script>
+            <br><input type="radio" name="construido" value="Vigas de madera" onchange="mpiso3(this)"><label class="dise">Vigas de madera</label>
+        <button type="button" id="btn-abrir-popup15" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir15()">Imagen Viga</button>
+        <div class="overlay" id="overlay15">
+            <div class="popup" id="popup15">
+                <a href="#" id="btn-cerrar-popup15" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg16.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="construido" value="Vigas de acero" onchange="mpiso4(this)"><label class="dise">Vigas de acero</label>
+        <button type="button" id="btn-abrir-popup16" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir16()">Imagen Viga</button>
+        <div class="overlay" id="overlay16">
+            <div class="popup" id="popup16">
+                <a href="#" id="btn-cerrar-popup16" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg17.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <h2>Tipo de techo o cubierta:</h2>
+        <br><input type="radio" name="techo" value="Losa de concreto aligerado" onchange="techo(this)"><label
+        class="form_label"><abbr title="conformada por concreto armado, estas se evidencian ya que forman una especie de cajón en el techo"><label class="dise">Losa de concreto aligerado</label></abbr></label>
+        <button type="button" id="btn-abrir-popup17" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir17()">Imagen Losa</button>
+        <div class="overlay" id="overlay17">
+            <div class="popup" id="popup17">
+                <a href="#" id="btn-cerrar-popup17" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg14.jpg" width="50%" height="50%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Losa de concreto maciza" onchange="techo2(this)"><label
+        class="form_label"><abbr title="conformada por concreto y acero"><label class="dise">Losa de concreto maciza</label></abbr></label>
+        <button type="button" id="btn-abrir-popup18" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir18()">Imagen Losa</button>
+        <div class="overlay" id="overlay18">
+            <div class="popup" id="popup18">
+                <a href="#" id="btn-cerrar-popup18" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg15.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Zinc" onchange="techo3(this)"><label class="dise">Zinc</label>
+        <button type="button" id="btn-abrir-popup19" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir19()">Zinc</button>
+        <div class="overlay" id="overlay19">
+            <div class="popup" id="popup19">
+                <a href="#" id="btn-cerrar-popup19" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg18.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Terminada en placa" onchange="techo4(this)"><label class="dise">Terminada en placa</label>
+        <button type="button" id="btn-abrir-popup20" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir20()">Imagen placa</button>
+        <div class="overlay" id="overlay20">
+            <div class="popup" id="popup20">
+                <a href="#" id="btn-cerrar-popup20" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg19.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Placa fácil" onchange="techo5(this)"><label class="dise">Placa fácil</label>
+        <button type="button" id="btn-abrir-popup21" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir21()">Imagen placa</button>
+        <div class="overlay" id="overlay21">
+            <div class="popup" id="popup21">
+                <a href="#" id="btn-cerrar-popup21" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg20.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Eternit" onchange="techo6(this)"><label class="dise">Eternit</label>
+        <button type="button" id="btn-abrir-popup22" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir22()">Imagen Eternit</button>
+        <div class="overlay" id="overlay22">
+            <div class="popup" id="popup22">
+                <a href="#" id="btn-cerrar-popup22" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg21.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Estructura de madera y tejas de barro" onchange="techo7(this)"><label class="dise">Estructura de madera y tejas de barro.</label>
+        <button type="button" id="btn-abrir-popup23" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir23()">Imagen estructura</button>
+        <div class="overlay" id="overlay23">
+            <div class="popup" id="popup23">
+                <a href="#" id="btn-cerrar-popup23" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg22.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <br><input type="radio" name="techo" value="Metálica" onchange="techo8(this)"><label class="dise">Metálica</label>
+        <button type="button" id="btn-abrir-popup24" class="btn-abrir-popup" style="vertical-align: auto;;" onclick="abrir24()">Imagen metálica</button>
+        <div class="overlay" id="overlay24">
+            <div class="popup" id="popup24">
+                <a href="#" id="btn-cerrar-popup24" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <img src="../Static/Images/jpeg23.jpg" width="100%" height="100%">
+            </div>
+        </div>
+        <script src="../java/interior.js"></script>
+        <h2>¿La edificación presenta algún asentamiento(hundimiento)?</h2>
+        <div class="hundimiento2">
+        <input type="radio" name="hundimiento" value="Si" onclick="mostrar(this)"><label class="hundimiento">Si</label><input type="radio" name="hundimiento" value="No" onclick="ocultar(this)"><label class="hundimiento">No</label>
+        </div>
+        <div class="hundimiento" id="hundimiento" style="display:none">
+            <h3><label class="form_label">Subir 2 imágenes</label></h3>
+            <label class="form_label">Lejana al hundimiento horizontal</label>
+            <br><input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+            <br><br><label class="form_label">Cercana con algún objeto con el que se pueda dimensionar.(ejemplo:un lápiz o cuaderno al lado del hundimiento)</label>
+            <br><input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+        </div>
+        <h2>¿Se evidencian grietas pronunciadas en los muros y/o columnas?</h2>
+        <div class="hundimiento2">
+        <input type="radio" name="grieta" value="Si" onclick="mostrar1(this)"><label class="hundimiento">Si</label><input type="radio" name="grieta" value="No" onclick="ocultar1(this)"><label class="hundimiento">No</label>
+        </div>
+        <div class="hundimiento" id="grieta" style="display:none">
+            <h3><label class="form_label">Subir 2 imágenes</label></h3>
+            <label class="form_label">Lejana a la grieta</label>
+            <br><input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+            <br><br><label class="form_label">Cercana con algún objeto con el que se pueda dimensionar.(ejemplo:un lápiz o cuaderno al lado de la grieta)</label>
+            <br><input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+        </div>
+        <input type="text" name="resultadointe" id="result" style="display:none ;" >
+        <div class="submit">
+        <br><input type="submit" value="Siguiente" class="btn_submit" id="BotonRegistrar" onclick="resultadointerior()">
+        </div>
+        </form>
+    </div>
+</body>
+</html>
